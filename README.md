@@ -1,7 +1,19 @@
 # gulp-postcss-test
-My First Test using PostCSS with GULP
+  Meu Projeto de Teste dos Plugins PostCSS
 
-## Install the following Plugins
+## Rode os comandos abaixo para instalar as dependenciads do Projeto
 ``` bash
-  npm install gulp -g
+  npm i gulp -g
+  npm i csscomb -g
+  npm i
 ```
+
+Feito testes nos Seguintes PostCSS Plugin:
+### Plugins
+
+* Gulp PostCSS
+* SourceMaps
+* Autoprefixer
+* Gulp CSSnano
+* Gulp CSSComb
+
