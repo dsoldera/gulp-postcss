@@ -1,7 +1,7 @@
 # gulp-postcss-test
   Meu Projeto de Teste dos Plugins PostCSS
 
-## Rode os comandos abaixo para instalar as dependenciads do Projeto
+### Rode os comandos abaixo para instalar as dependenciads do Projeto
 ``` bash
   npm i gulp -g
   npm i csscomb -g
@@ -16,4 +16,5 @@ Feito testes nos Seguintes PostCSS Plugin:
 * Autoprefixer
 * Gulp CSSnano
 * Gulp CSSComb
+* Lost (grid)
 

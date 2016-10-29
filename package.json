@@ -29,9 +29,9 @@
     "cssnano": "^3.7.3",
     "gulp": "^3.9.1",
     "gulp-csscomb": "^3.0.8",
-    "gulp-cssnano": "^2.1.2",
     "gulp-postcss": "^6.0.1",
     "gulp-sourcemaps": "^1.6.0",
+    "lost": "^7.1.0",
     "postcss-nested": "^1.0.0",
     "postcss-pxtorem": "^3.3.1",
     "postcss-reporter": "^1.2.1"

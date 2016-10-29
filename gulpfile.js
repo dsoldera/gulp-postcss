@@ -5,14 +5,14 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
-    gulpcssnano = require('gulp-cssnano'),
     postcssnested = require('postcss-nested'),
     cssmqpacker = require('css-mqpacker'),
     csscomb = require('gulp-csscomb'),
+    lost = require('lost'),
     reporter = require("postcss-reporter");
 
-
 /*************************************************/
+
 gulp.task('default', function () {
 	var processors = [
     autoprefixer({browsers: ['last 2 version']}),
@@ -23,39 +23,33 @@ gulp.task('default', function () {
 	return gulp
 	 .src('./src/styles.css')
 	 .pipe(postcss(processors))
-	 .pipe(gulp.dest('./dest'));
+	 .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('autoprefixer', function() {
     return gulp
 	 .src('./src/styles.css')
 	 .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
-	 .pipe(gulp.dest('./dest'));
+	 .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('cssnano', function() {
     return gulp
      .src('./src/styles.css')
-     .pipe(postcss([ nano() ]))
-     .pipe(gulp.dest('./dest'));
+     .pipe(postcss([ cssnano() ]))
+     .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('csscomb', function () {
-  return gulp.src('./src/gulp-cssnano.css')
+  return gulp
+    .src('./src/styles.css')
     .pipe(csscomb())
-    .pipe(gulp.dest('./dest'));
+    .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('gulpcssnano', function () {
-  return gulp.src('./src/gulp-cssnano.css')
-    .pipe(gulpcssnano())
-    .pipe(gulp.dest('./dest'));
-});
-
-gulp.task('gulpcssnano', function () {
-  return gulp.src('./src/gulp-cssnano.css')
-    .pipe(sourcemaps.init())
-    .pipe(gulpcssnano())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dest'));
+gulp.task('lost', function() {
+    return gulp
+    .src('./src/lost.css')
+    .pipe(postcss([ lost() ]))
+    .pipe(gulp.dest('./dist'));
 });
