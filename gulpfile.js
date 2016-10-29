@@ -49,7 +49,9 @@ gulp.task('csscomb', function () {
 
 gulp.task('lost', function() {
     return gulp
-    .src('./src/lost.css')
+    .src(
+        ['./src/lost*.css']
+        )
     .pipe(postcss([ lost() ]))
     .pipe(gulp.dest('./dist'));
 });

@@ -1,0 +1,42 @@
+/* ASYNMETRICAL GRID WITH LOST */
+.grid-one div {
+	width: calc(99.9% * 1/4 - (30px - 30px * 1/4));
+}
+.grid-one div:nth-child(1n) {
+	float: left;
+	margin-right: 30px;
+	clear: none;
+}
+.grid-one div:last-child {
+	margin-right: 0;
+}
+.grid-one div:nth-child(0n) {
+	margin-right: 0;
+	float: right;
+}
+.grid-one div:nth-child(0n + 1) {
+	clear: both;
+}
+
+.grid-one div:nth-child(2) {
+	width: calc(99.9% * 1/2 - (30px - 30px * 1/2));
+}
+
+.grid-one div:nth-child(2):nth-child(1n) {
+	float: left;
+	margin-right: 30px;
+	clear: none;
+}
+
+.grid-one div:nth-child(2):last-child {
+	margin-right: 0;
+}
+
+.grid-one div:nth-child(2):nth-child(0n) {
+	margin-right: 0;
+	float: right;
+}
+
+.grid-one div:nth-child(2):nth-child(0n + 1) {
+	clear: both;
+}

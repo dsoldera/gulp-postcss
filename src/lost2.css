@@ -1,0 +1,8 @@
+/* ASYNMETRICAL GRID WITH LOST */
+.grid-one div {
+	lost-column: 1/4 0;
+}
+
+.grid-one div:nth-child(2) {
+	lost-column: 1/2 0;
+}
