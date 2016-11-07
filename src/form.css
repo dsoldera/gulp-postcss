@@ -1,0 +1,48 @@
+.container {
+  /*width: 800px;*/
+  /*margin: 0 auto;*/
+  lost-center: 800px; /* equivale ao margin 0 auto com max-width */
+  min-height: 300px;
+  background-color: gray;
+}
+
+.grid-one,
+.grid-two,
+.grid-three {
+	lost-utility: clearfix;
+	width: 100%;
+}
+
+.grid-one div {
+  border-bottom: 1px solid red;
+  lost-column: 1/3;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.grid-two div {
+  border-bottom: 1px solid red;
+  lost-column: 1/4 0; /* used for asymetrical grids */
+  padding: 10px 0;
+  margin-bottom: 10px;
+  background-color: yellowgreen;
+}
+
+.grid-two div:nth-child(2) {
+  lost-column: 1/2 0; /* used for asymetrical grids */
+}
+
+.grid-three div {
+  border-bottom: 1px solid red;
+  padding: 10px 0;
+  lost-column: 1/2;
+  margin-bottom: 10px;
+  background-color: mediumpurple;
+}
+
+@media screen and (max-width: 500px) {
+  .grid-three div {
+    lost-column: 1/1;
+  }
+}

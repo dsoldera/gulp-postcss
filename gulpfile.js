@@ -9,11 +9,12 @@ var gulp = require('gulp'),
     cssmqpacker = require('css-mqpacker'),
     csscomb = require('gulp-csscomb'),
     lost = require('lost'),
+    watch = require('gulp-watch'),
     reporter = require("postcss-reporter");
 
 /*************************************************/
 
-gulp.task('default', function () {
+gulp.task('postcss', function () {
 	var processors = [
     autoprefixer({browsers: ['last 2 version']}),
     postcssnested(),
@@ -49,9 +50,15 @@ gulp.task('csscomb', function () {
 
 gulp.task('lost', function() {
     return gulp
-    .src(
-        ['./src/lost*.css']
-        )
+    .src('./src/form.css')
     .pipe(postcss([ lost() ]))
     .pipe(gulp.dest('./dist'));
 });
+
+gulp.task('watch', function () {
+    // Endless stream mode 
+    return watch('src/form.css')
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['watch','lost']);
